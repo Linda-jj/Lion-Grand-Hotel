@@ -1,0 +1,59 @@
+.hotel-list-container {
+  width: 100%;
+}
+
+.hotel-list-title {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.hotel-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hotel-list-header,
+.hotel-list-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 2px solid #d1d5db; /* gray-300 */
+  font-size: 18px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.room-image {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+}
+
+.delete-icon {
+  margin-left: 40px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #dc2626; /* red-600 */
+}
+
+.delete-icon:hover {
+  color: #b91c1c;
+}
+.simple-alert {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.delete-icon {
+  color: red;
+  cursor: pointer;
+}

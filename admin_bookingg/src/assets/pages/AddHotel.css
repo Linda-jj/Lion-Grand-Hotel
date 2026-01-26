@@ -1,0 +1,60 @@
+/* Form container */
+.add-hotel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 16px;
+  color: black;
+  box-shadow: 0 0 5px black;
+}
+
+/* Image upload */
+.upload-container p {
+  margin-bottom: 4px;
+}
+
+.upload-label img {
+  width: 128px; /* w-32 */
+  cursor: pointer;
+  border: 2px dashed #d1d5db;
+  border-radius: 6px;
+}
+
+/* Input container */
+.input-container {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 12px;
+}
+
+.input-container p {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.input-container input {
+  width: 100%;
+  max-width: 500px;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+.add-room-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(163, 212, 212);
+  color: #0e0d0d;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.add-room-button:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,68 @@
+.hero {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+}
+
+.hero-swiper {
+  height: 100%;
+}
+
+.slide {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 100px;
+  top: 80px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.slide-title {
+}
+.slide-title h2 {
+  font-size: 32px;
+  color: rgb(240, 208, 208);
+}
+.slide-title p {
+  font-size: 20px;
+}
+.slide-title span {
+  color: rgb(228, 167, 13);
+  font-weight: 800;
+}
+
+/* BACKGROUND IMAGES */
+.slide1 {
+  background-image: url("/public/pic/lion-statue-entrance_1195984-13180.jpg");
+}
+
+.slide2 {
+  background-image: url("/public/pic/luxurious-hotel-lobby-stockcake.webp");
+}
+
+.slide3 {
+  background-image: url("/public/pic/pexels-pixabay-164595.jpg");
+}
+
+/* BUTTON */
+.slide button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  background: #7fb7a3;
+  font-weight: bold;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.slide button:hover {
+  background-color: transparent;
+  box-shadow: 0 0 10px white;
+  color: rgb(228, 167, 13);
+  font-weight: 800;
+  border: 2px solid black;
+}

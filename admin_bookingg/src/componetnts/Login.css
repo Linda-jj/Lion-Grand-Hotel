@@ -1,0 +1,71 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+/* Card */
+.login-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 24px 32px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Title */
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #1f2937; /* gray-800 */
+  margin-bottom: 16px;
+}
+
+/* Form spacing */
+.form-group {
+  margin-bottom: 16px;
+}
+
+/* Labels */
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563; /* gray-600 */
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Inputs */
+.form-input {
+  width: 95%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #a21caf; /* fuchsia-900 */
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #701a75; /* fuchsia-900 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  opacity: 0.9;
+}

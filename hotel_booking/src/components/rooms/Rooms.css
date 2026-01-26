@@ -1,0 +1,84 @@
+.rooms-box {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30px 50px;
+  position: relative;
+}
+.rooms-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.rooms-title h3 {
+  font-style: italic;
+  font-weight: 200;
+  text-decoration: underline;
+}
+.rooms-continer {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.room {
+  border: 1px solid none;
+  align-self: center;
+}
+.room img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  transition: 0.01s;
+}
+.hover-box {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hover-img {
+  width: 200px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  margin-top: 10px;
+}
+
+.hover-box:hover.hover-img {
+  display: block;
+}
+
+.des-one {
+  display: flex;
+  top: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 30px;
+  height: 250px;
+  border: 1px solid wheat;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.price-box {
+  width: 90%;
+  font-size: 16px;
+  color: rgb(228, 167, 13);
+}
+.description {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+}
+.description-2 {
+  margin: 10px;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 100;
+  color: rgb(228, 167, 13);
+}

@@ -1,0 +1,51 @@
+.payment-success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: rgb(235, 229, 229);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.success-card {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  width: 100%;
+}
+
+.success-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.success-card h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #2e8b57;
+}
+
+.success-card p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.home-btn {
+  background: rgb(163, 212, 212);
+  color: #181717;
+  font-weight: 500;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  background: rgb(228, 167, 13);
+}

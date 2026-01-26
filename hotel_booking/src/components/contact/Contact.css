@@ -1,0 +1,67 @@
+.contact-box {
+  display: flex;
+  color: white;
+  margin: 50px;
+}
+.contact-title {
+}
+.contact-title h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.contact-title p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.contact-title p span {
+  color: rgb(228, 167, 13);
+  font-weight: 800;
+}
+
+.contat-continer {
+  display: flex;
+  flex-direction: column;
+}
+.img-contact img {
+  width: 400px;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+.booking-cont form {
+  display: flex;
+  flex-direction: column;
+}
+.booking-cont label {
+  font-size: 18px;
+  margin: 10px;
+  font-weight: 300;
+}
+.booking-cont input {
+  padding: 15px;
+  border-radius: 10px;
+  width: 400px;
+}
+.booking-cont input :placeholder-shown {
+  font-size: 14px;
+}
+.nav-btnn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  background: #7fb7a3;
+  font-weight: bold;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.nav-btnn:hover {
+  background-color: transparent;
+  box-shadow: 0 0 10px white;
+  color: rgb(228, 167, 13);
+  font-weight: 700;
+  border: 2px solid black;
+}
