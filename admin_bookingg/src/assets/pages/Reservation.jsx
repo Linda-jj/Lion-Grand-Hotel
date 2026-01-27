@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // 👈 import
 import "./Reservation.css";
 
-export const backendUrl = "http://localhost:7000";
+import { backendUrl } from "../../App";
 
 const Reservation = () => {
   const [reservations, setReservations] = useState([]);

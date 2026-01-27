@@ -37,19 +37,51 @@ export default function HotelDetails() {
     setBookingData({ ...bookingData, [e.target.name]: e.target.value });
   };
 
-  // Handle "Book Now" click → navigate to Book2
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Navigate to Book2 page and pass booking info
-    navigate("/book2", {
-      state: {
-        bookingData,
-        room,
+  try {
+    const res = await axios.post(
+      `${backendUrl}/api/reservation/create`,
+      {
+        name: bookingData.name,
+        email: bookingData.email,
+        phone: bookingData.phone,
+        checkin: bookingData.checkin,
+        checkout: bookingData.checkout,
+        guests: bookingData.guests,
+        roomName: room.name,
+        roomId: room._id,
       },
-    });
-  };
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
+    if (res.data.success) {
+      setBookingStatus({ success: true, message: "Reservation created!" });
+
+      // OPTIONAL: Navigate to success page
+      navigate("/book2", {
+        state: {
+          bookingData,
+          room,
+        },
+      });
+    } else {
+      setBookingStatus({ success: false, message: res.data.message });
+    }
+  } catch (err) {
+    console.error(err);
+    setBookingStatus({
+      success: false,
+      message: "Error creating reservation",
+    });
+  }
+};
   if (!room) return <p>Loading room details...</p>;
 
   return (

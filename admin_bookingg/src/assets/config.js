@@ -1,0 +1,1 @@
+export const backendUrl = "https://lion-grand-hotel-1.onrender.com";

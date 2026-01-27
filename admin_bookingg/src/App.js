@@ -8,7 +8,7 @@ import Reservation from "./assets/pages/Reservation";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
 
-export const backendUrl = "http://localhost:7000";
+export const backendUrl = "https://lion-grand-hotel-1.onrender.com";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));

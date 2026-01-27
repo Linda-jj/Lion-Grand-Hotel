@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./Login.css";
 import axios from "axios";
-export const backendUrl = "http://localhost:7000";
+import { backendUrl } from "../App";
 
 const Login = ({ setToken }) => {
   const [email, setEmail] = useState("");

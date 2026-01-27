@@ -1,6 +1,7 @@
 const reservationModels = require("../models/reservationModels");
 const createReservation = async (req, res) => {
   try {
+    console.log("REQ BODY:", req.body);
     const { name, email, phone, checkin, checkout, guests, roomName, roomId } =
       req.body;
     if (
@@ -9,7 +10,7 @@ const createReservation = async (req, res) => {
       !phone ||
       !checkin ||
       !checkout ||
-      guests === undefined||
+      guests === null ||
       !roomName ||
       !roomId
     ) {
@@ -24,7 +25,6 @@ const createReservation = async (req, res) => {
       guests,
       roomName,
       roomId,
-      
     });
     await reservation.save();
     res.json({

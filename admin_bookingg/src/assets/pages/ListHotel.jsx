@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import { MdAutoDelete } from "react-icons/md";
 import "./ListHotel.css";
-export const backendUrl = "http://localhost:7000";
+import { backendUrl } from "../../App";
 
 const ListHotel = ({ token }) => {
   const [list, setList] = useState([]);
@@ -32,7 +32,7 @@ const ListHotel = ({ token }) => {
     });
 
     if (res.data.success) {
-      setList((prev) => prev.filter((item) => item._id !== id));;
+      setList((prev) => prev.filter((item) => item._id !== id));
       setMessage("Room deleted successfully");
     } else {
       setMessage("Delete failed");
