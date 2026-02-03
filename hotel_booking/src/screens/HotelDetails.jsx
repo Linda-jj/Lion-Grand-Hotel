@@ -246,6 +246,7 @@ export default function HotelDetails() {
           <div
             style={{
               display: "flex",
+              flexDirection:"column",
               gap: "15px",
               justifyContent: "center",
               marginTop: "20px",

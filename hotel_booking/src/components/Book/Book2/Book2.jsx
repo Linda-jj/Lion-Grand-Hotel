@@ -52,8 +52,8 @@ export default function Book2() {
             <br />
             Grand Hotel
           </p>
-          <p>Total: ${total}</p>
-          <p>Initial Payment: ${initialPayment}</p>
+          <p>Total: {total}</p>
+          <p>Initial Payment: {initialPayment}</p>
         </div>
 
         <div className="book-card">
