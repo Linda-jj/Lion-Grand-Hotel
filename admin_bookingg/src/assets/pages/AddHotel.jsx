@@ -62,7 +62,7 @@ setMessage(" Failed to add room");
         </div>
 
         <div className="input-container">
-          <p>Room Name</p>
+          <p>Room Number</p>
           <input
             type="text"
             placeholder="Enter room name"

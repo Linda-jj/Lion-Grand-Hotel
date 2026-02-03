@@ -134,6 +134,13 @@
   background-color: #bdccc7;
   box-shadow: 0 0 5px black;
   font-weight: 500;
+  margin: 50px 80px;
+}
+.book2 p {
+  margin: 0 23px;
+}
+.book2 button {
+  margin: 5px;
 }
 .book-main {
   display: flex;
@@ -168,4 +175,85 @@
 }
 .final-Booking img {
   border-radius: 30px;
+}
+
+@media (max-width: 600px) {
+  .book2 {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .book-header h1 {
+    font-size: 20px;
+  }
+
+  .book-main {
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 15px;
+  }
+
+  .book-info {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .book-card form {
+    width: 100%;
+    align-items: center;
+  }
+
+  .book-card input {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .book-btnn {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .book-btn1,
+  .book-btn2 {
+    width: 90%;
+    font-size: 14px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .book2 {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .book-main {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .book-card form {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+  }
+
+  .book-card input {
+    width: 100%;
+  }
+
+  .book-btnn {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .book-btn1,
+  .book-btn2 {
+    width: 200px;
+  }
 }

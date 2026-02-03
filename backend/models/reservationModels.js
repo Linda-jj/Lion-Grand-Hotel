@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 
 const reservationSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    phone: { type: String, required: true },
+    name: { type: String},
+    email: { type: String},
+    phone: { type: String },
     checkin: { type: Date, required: true },
     checkout: { type: Date, required: true },
     guests: { type: Number, required: true },
-    roomName: { type: String, required: true },
+    roomName: { type: String},
     roomId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Hotel",
+      ref: "hotels",
       required: true,
     },
   },

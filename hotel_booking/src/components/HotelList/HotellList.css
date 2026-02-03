@@ -76,3 +76,79 @@
   text-align: center;
   color: #888;
 }
+@media (max-width: 600px) {
+  .hotel-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .hotel-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+  }
+
+  .room-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .room-image {
+    height: 220px;
+  }
+
+  .room-body {
+    padding: 1rem;
+  }
+
+  .room-name {
+    font-size: 1.25rem;
+  }
+
+  .room-price {
+    font-size: 1.1rem;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .amenity-item {
+    font-size: 0.95rem;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hotel-section {
+    padding: 3rem 2rem;
+  }
+
+  .hotel-title {
+    font-size: 2.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .room-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .room-image {
+    height: 260px;
+  }
+
+  .room-name {
+    font-size: 1.4rem;
+  }
+
+  .room-price {
+    font-size: 1.15rem;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .amenity-item {
+    font-size: 0.95rem;
+  }
+}

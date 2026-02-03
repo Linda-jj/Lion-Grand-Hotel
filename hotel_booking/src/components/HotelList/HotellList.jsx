@@ -36,8 +36,8 @@ export default function HotellList() {
                   </Link>
 
                   <div className="room-body">
-                    <h3 className="room-name">{name}</h3>
-                    <p className="room-price">${price}</p>
+                    <h3 className="room-name"> Room Number {name}</h3>
+                    <p className="room-price">{price}</p>
 
                     <div className="amenities-grid">
                       {amenitiesList.map((amenity) => (

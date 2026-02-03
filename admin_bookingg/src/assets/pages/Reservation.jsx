@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // 👈 import
+import { useNavigate } from "react-router-dom"; 
 import "./Reservation.css";
 
 import { backendUrl } from "../../App";
 
 const Reservation = () => {
   const [reservations, setReservations] = useState([]);
-  const navigate = useNavigate(); // 👈 initialize
+  const navigate = useNavigate(); 
 
   // Fetch all reservations once
   useEffect(() => {
@@ -27,7 +27,7 @@ const Reservation = () => {
   // Delete reservation function
   const deleteReservation = async (id) => {
     const confirmDelete = window.confirm(
-      "Are you sure you want to delete this reservation?"
+      "Are you sure you want to cancle this reservation?"
     );
 
     if (!confirmDelete) return;
@@ -38,7 +38,7 @@ const Reservation = () => {
       );
 
       if (res.data.success) {
-        alert("Reservation deleted successfully");
+        alert("Reservation cancled successfully");
 
         // Remove from UI without refresh
         setReservations((prev) => prev.filter((item) => item._id !== id));
@@ -92,7 +92,7 @@ const Reservation = () => {
                       className="delete-btn"
                       onClick={() => deleteReservation(res._id)}
                     >
-                      Delete
+                      Cancel
                     </button>
                   </td>
                 </tr>

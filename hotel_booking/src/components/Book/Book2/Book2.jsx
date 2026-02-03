@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./../Book.css";
 
@@ -6,7 +6,9 @@ export default function Book2() {
   const location = useLocation();
   const navigate = useNavigate();
   const { bookingData, room } = location.state || {};
-
+ const [bank, setBank] = useState('CBE');
+ const[refe,setRefe]=useState("")
+ const[acc,setAcc]=useState("")
   if (!room || !bookingData) {
     return <p>No booking data available</p>;
   }
@@ -18,15 +20,22 @@ export default function Book2() {
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
   const total = room.price * diffDays * bookingData.guests;
-  const initialPayment = total * 0.3; // Example: 30% upfront
+  const initialPayment = total 
 
+   const handleChange = (event) => {
+    setBank(event.target.value);
+  };
+
+  
   const handlePayment = (e) => {
     e.preventDefault();
 
     // Optionally here you can call backend to save reservation
     // axios.post("/api/reservation/create", { ... })
 
-    // Navigate to Payment Success
+;
+
+ 
     navigate("/payment-success", { state: { bookingData, room } });
   };
   return (
@@ -48,20 +57,44 @@ export default function Book2() {
         </div>
 
         <div className="book-card">
-          <form>
-            <label>Card Number</label>
-            <input name="number" placeholder="Payment card number" />
-            <label>Bank</label>
-            <input name="text" placeholder="Bank Name" />
-            <label>Exp Date</label>
-            <input name="number" placeholder="MM/YY" />
-            <label>CVV</label>
-            <input name="number" placeholder="XXX" />
+          <form onSubmit={ handleChange }>
+            <p>Choose payment option </p>
+            <label>
+              <input
+            type="radio"
+            name="bank"
+            value="CBE"
+            onChange={handleChange}
+            />{" "}CBE</label>
+            <label><input
+            type="radio"
+            name="bank"
+            value="Telebirr"
+            checked={bank=== "Telebirr"}
+            onChange={handleChange}
+            />{" " } Telebirr</label>
+            {bank === "CBE" && <>
+                 <label>Accout Number</label>
+          <input 
+          type="text"
+          value={acc}
+          onChange={(e)=>setAcc(e.target.value)}
+          placeholder="Enter Your Account Number"
+        />
+            </>}
+        {bank === "Telebirr" && (<>
+        <label>Reference Number</label>
+          <input 
+          type="text"
+          value={refe}
+          onChange={(e)=>setRefe(e.target.value)}
+          placeholder="Enter Your Reference Number"
+        />
+        </>)}
+            
+      
           </form>
-        </div>
-      </div>
-
-      <div className="book-btnn">
+            <div className="book-btnn">
         <button className="book-btn1" onClick={handlePayment}>
           Pay Now
         </button>
@@ -72,6 +105,10 @@ export default function Book2() {
           Cancel
         </button>
       </div>
+        </div>
+      </div>
+
+      
     </div>
   );
 }
