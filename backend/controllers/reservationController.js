@@ -74,7 +74,7 @@ const conflict = await Reservation.findOne({
       });
       return res.status(409).json({
         success: false,
-        message: "This room is already booked for the selected dates. Please choose different dates or another room.",
+        // message: "This room is already booked for the selected dates. Please choose different dates or another room.",
       });}
 
     // ---------------- CREATE RESERVATION ----------------
