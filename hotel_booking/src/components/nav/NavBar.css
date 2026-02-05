@@ -10,7 +10,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: rgba(241, 226, 188, 0.9);
+  background-color: #7e7551;
+  opacity: 0.9;
   color: white;
 }
 
@@ -31,7 +32,7 @@
 .mobile-book {
   display: none;
 }
-i {
+.icon {
   display: none;
 }
 
@@ -51,7 +52,7 @@ i {
 }
 
 .nav-links a:hover {
-  background-color: rgb(163, 212, 212);
+  background-color: #3f4975;
   border-radius: 15px;
 }
 
@@ -65,7 +66,7 @@ i {
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: rgb(192, 236, 236);
+  background-color: #3f4975;
   transition: 0.2s;
 }
 
@@ -77,29 +78,44 @@ i {
 }
 
 .dropDown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(14, 20, 50, 0.8);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+.icons::before{
   display: none;
 }
+
 /* ================= ICONS ================= */
-.icons,
-.icon {
-  display: none;
-}
 
 /* ================= MOBILE & TABLET ================= */
 @media (max-width: 1024px) {
   /* Hide desktop items */
   .nav-links,
   .nav-btn {
-    display:none;
+    display: none;
   }
 
   /* Hamburger */
   .icons {
-    display:block;
+    display: block;
     font-size: 26px;
     cursor: pointer;
     color: white;
-
+  }
+  .icons::before{
+    display: block;
+  }
+  .icon {
+    display: block;
   }
   /* Dropdown */
   .dropDown {
@@ -148,7 +164,7 @@ i {
 
   /* Close Icon */
   .icon {
-    display:block;
+    display: block;
     position: absolute;
     top: 25px;
     right: 30px;

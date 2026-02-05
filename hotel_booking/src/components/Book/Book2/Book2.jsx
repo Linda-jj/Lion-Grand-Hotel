@@ -9,6 +9,7 @@ export default function Book2() {
  const [bank, setBank] = useState('CBE');
  const[refe,setRefe]=useState("")
  const[acc,setAcc]=useState("")
+ const[phone,setPhone]=("")
   if (!room || !bookingData) {
     return <p>No booking data available</p>;
   }
@@ -29,13 +30,6 @@ export default function Book2() {
   
   const handlePayment = (e) => {
     e.preventDefault();
-
-    // Optionally here you can call backend to save reservation
-    // axios.post("/api/reservation/create", { ... })
-
-;
-
- 
     navigate("/payment-success", { state: { bookingData, room } });
   };
   return (
@@ -52,8 +46,8 @@ export default function Book2() {
             <br />
             Grand Hotel
           </p>
-          <p>Total: {total}</p>
-          <p>Initial Payment: {initialPayment}</p>
+          <p>Total: {total} Birr</p>
+          <p>Initial Payment: {initialPayment} Birr</p>
         </div>
 
         <div className="book-card">
@@ -65,6 +59,7 @@ export default function Book2() {
             name="bank"
             value="CBE"
             onChange={handleChange}
+            required
             />{" "}CBE</label>
             <label><input
             type="radio"
@@ -72,6 +67,7 @@ export default function Book2() {
             value="Telebirr"
             checked={bank=== "Telebirr"}
             onChange={handleChange}
+            required
             />{" " } Telebirr</label>
             {bank === "CBE" && <>
                  <label>Accout Number</label>
@@ -80,9 +76,17 @@ export default function Book2() {
           value={acc}
           onChange={(e)=>setAcc(e.target.value)}
           placeholder="Enter Your Account Number"
+          required
         />
             </>}
         {bank === "Telebirr" && (<>
+        <label>Phone Number</label>
+        <input
+        type="text"
+        value={phone}
+        onChange={(e)=>setPhone(e.target.value)}
+        placeholder="Enter your Phone Number"
+        />
         <label>Reference Number</label>
           <input 
           type="text"
@@ -90,6 +94,7 @@ export default function Book2() {
           onChange={(e)=>setRefe(e.target.value)}
           placeholder="Enter Your Reference Number"
         />
+        
         </>)}
             
       

@@ -21,7 +21,7 @@ export default function NavBar() {
           <Link to="/about">About</Link>
           <Link to="/rooms">Rooms</Link>
           <Link to="/activity">Activity</Link>
-          <Link to="/gusest">Guest Review</Link>
+          <Link to="/contact">Contact Us</Link>
         </nav>
       </div>
 

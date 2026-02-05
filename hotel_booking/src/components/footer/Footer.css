@@ -4,10 +4,10 @@
   justify-content: space-evenly;
   border: 1px solid;
   color: white;
-  background-color: #7fb7a3;
+  background-color: #7e7551;
   margin: 0px;
   padding: 20px;
-  height: 250px;
+  height: 50vh;
   border-radius: 50px;
   margin-top: 50px;
 }
@@ -38,15 +38,16 @@
   color: white;
   margin-bottom: 10px;
 }
+
 .footer-newletter {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .footer-newletter input {
-  margin-top: 8px;
+  /* margin-top: 8px; */
   padding: 15px;
   border-radius: 10px;
   width: 400px;
@@ -65,6 +66,9 @@
   font-size: 15px;
   cursor: pointer;
   transition: 0.1s;
+}
+.social-icon i {
+  gap:10px;
 }
 @media (max-width: 600px) {
   .footer-box {

@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { RoomsContext } from "../../contex/RoomsContext";
 import { FaUser, FaWifi } from "react-icons/fa";
 import { MdBathtub } from "react-icons/md";
 import { FaBedPulse } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import "./../HotelList/HotellList.css";
+import ReactPaginate from "react-paginate";
 
 const amenitiesList = [
   { label: "1-2 person", icon: <FaUser /> },
@@ -14,7 +15,13 @@ const amenitiesList = [
 ];
 
 export default function HotellList() {
+
   const { rooms } = useContext(RoomsContext);
+  const roomsPerPage=2
+  const[currentPage,setCurrentPage]=useState(0)
+  const startIndex=currentPage * roomsPerPage
+  const currentRooms=rooms.slice(startIndex,startIndex + roomsPerPage)
+  const pageCount= Math.ceil(rooms.length/roomsPerPage)
 
   return (
     <div className="hotel-section" id="booknow">
@@ -25,8 +32,8 @@ export default function HotellList() {
         </h2>
 
         <div className="room-grid">
-          {rooms.length > 0 ? (
-            rooms.map((room) => {
+          {currentRooms.length > 0 ? (
+            currentRooms.map((room) => {
               const { _id, image, name, price } = room;
 
               return (
@@ -36,8 +43,8 @@ export default function HotellList() {
                   </Link>
 
                   <div className="room-body">
-                    <h3 className="room-name"> Room Number {name}</h3>
-                    <p className="room-price">{price}</p>
+                    <h3 className="room-name"> {name}</h3>
+                    <p className="room-price">{price} Birr</p>
 
                     <div className="amenities-grid">
                       {amenitiesList.map((amenity) => (
@@ -55,7 +62,18 @@ export default function HotellList() {
             <p className="no-rooms">No rooms available</p>
           )}
         </div>
+        
       </div>
+              {rooms.length > roomsPerPage && (
+          <ReactPaginate
+            pageCount={pageCount}
+            onPageChange={(e) => setCurrentPage(e.selected)}
+            previousLabel="← Prev"
+            nextLabel="Next →"
+            containerClassName="pagination"
+            activeClassName="active"
+          />
+        )}
     </div>
   );
 }

@@ -1,22 +1,32 @@
-.section {
+.section{
   display: flex;
   justify-content: center;
-  color: white;
-  margin: 50px;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 50px;
+  max-width: 1280px;
+  height: 100vh;
+  background-color: #f7f0ed;
+gap: 50px;
+
+  
 }
-.picture {
-  width: 350px;
-  height: 300px;
-  border-radius: 15px;
-  margin-right: 20px;
-  box-shadow: 0 0 10px #7fb7a3;
+
+.picture img{
+width: 400px;
+height: 400px;
+margin: 20px;
+box-shadow: 0 0 10px white;
+border-radius: 10px;
 }
-.about-content p {
+.about-content{
+color: black;
   font-size: 16px;
-  font-weight: 100;
+
 }
-.section-title {
-  margin-bottom: 15px;
-  font-style: italic;
-  font-weight: 100;
+.about-content h1 h2{
+  font-weight: 500;
+}
+.about-content span{
+  color: gold;
 }

@@ -1,15 +1,16 @@
-.section {
-  background-color: #0e1432;
+.section-gus {
+  background-color:#f7f0ed;
   padding: 30px 20px;
-  color: white;
+  color: rgb(12, 12, 12);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .reviewsSection h2 {
   font-size: 1.4rem;
-  margin-bottom: 5px;
+  margin: 10px;
 }
 
 .reviewsSection p {
@@ -18,16 +19,16 @@
   margin-bottom: 20px;
 }
 
-.reviewsContainer {
+.reviews-container {
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .review-Card {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 10px;
   background: #a7c8a5;
   padding: 12px;
@@ -36,14 +37,14 @@
   align-items: center;
 }
 
-.reviewCard img {
-  width: 45px;
-  height: 45px;
+.review-card img {
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.reviewBox p {
+.review-box p {
   margin: 0;
   font-size: 0.75rem;
 }
@@ -53,4 +54,10 @@
   font-weight: bold;
   display: block;
   margin-top: 6px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 10px;
 }

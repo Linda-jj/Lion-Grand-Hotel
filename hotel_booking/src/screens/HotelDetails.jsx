@@ -107,7 +107,7 @@ export default function HotelDetails() {
       if (err.response?.status === 409) {
         setBookingStatus({
           success: false,
-          message: err.response.data.message,
+          
         });
         setConflictDetected(true);
       } else if (err.response?.status === 400) {
@@ -135,11 +135,11 @@ export default function HotelDetails() {
         <h1>{room.name}</h1>
         <img src={room.image} alt={room.name} />
         <p>{room.description}</p>
-        <p>{room.price}</p>
+        <p>{room.price} Birr</p>
 
         <h2>Book this room</h2>
       </div>
-      {bookingStatus && (
+      {/* {bookingStatus && (
         <div
           className={`status-message ${bookingStatus.success ? "success" : "error"}`}
           style={{
@@ -153,7 +153,7 @@ export default function HotelDetails() {
         >
           {bookingStatus.message}
         </div>
-      )}
+      )} */}
       <form onSubmit={handleSubmit}>
         <input
           type="text"

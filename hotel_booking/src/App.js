@@ -12,6 +12,7 @@ import HotelDetails from "./screens/HotelDetails";
 import RoomsContextProvider from "./contex/RoomsContext";
 import Book2 from "./components/Book/Book2/Book2";
 import PaymentSuccess from "./components/paymentsucces/PaymentSuccess";
+import Contact from "./components/contact/Contact"
 
 export const backendUrl = "https://lion-grand-hotel-1.onrender.com";
 
@@ -26,10 +27,11 @@ export default function App() {
           element={
             <>
               <Home />
+                <About/>
               <HotellList />
-              <About />
               <Activity />
               <GusestsReview />
+              <Contact/>
             </>
           }
         />
@@ -37,6 +39,7 @@ export default function App() {
         <Route path="/rooms" element={<HotellList />} />
         <Route path="/activity" element={<Activity />} />
         <Route path="/gusest" element={<GusestsReview />} />
+        <Route path="/contact" element={<Contact/>}/>
         <Route path="/room/:id" element={<HotelDetails />} />
         <Route path="/book2" element={<Book2 />} />
         <Route path="/payment-success" element={<PaymentSuccess />} />

@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 export default function Hearder() {
   return (
@@ -34,7 +35,9 @@ export default function Hearder() {
               <p>0923-829008</p>
               <p>OR</p>
             </span>
-            <button>Check Availability</button>
+            <Link to={"/rooms"}>
+              <button>Check Availability</button>
+            </Link>
           </div>
         </SwiperSlide>
 
