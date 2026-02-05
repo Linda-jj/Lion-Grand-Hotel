@@ -39,7 +39,7 @@
 }
 
 .sidebar-link:hover {
-  background-color: #a21caf; /* fuchsia-500 */
+  background-color: #7e7551; /* fuchsia-500 */
   color: #ffffff;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .sidebar-logout:hover {
-  background-color: #a21caf;
+  background-color: #7e7551;
   color: #ffffff;
 }
 

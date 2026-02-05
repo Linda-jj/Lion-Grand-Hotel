@@ -2,13 +2,24 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "./Reservation.css";
+import ReactPaginate from "react-paginate";
 
 import { backendUrl } from "../../App";
 
 const Reservation = () => {
   const [reservations, setReservations] = useState([]);
   const navigate = useNavigate(); 
+  const [currentPage, setCurrentPage] = useState(1);
+const itemsPerPage = 4;
+const indexOfLastItem = currentPage * itemsPerPage;
+const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
+const currentReservations = reservations.slice(
+  indexOfFirstItem,
+  indexOfLastItem
+);
+
+const totalPages = Math.ceil(reservations.length / itemsPerPage);
   // Fetch all reservations once
   useEffect(() => {
     const fetchReservation = async () => {
@@ -78,7 +89,7 @@ const Reservation = () => {
                 </td>
               </tr>
             ) : (
-              reservations.map((res) => (
+              currentReservations.map((res) => (
                 <tr key={res._id} className="table-row">
                   <td>{res.roomName}</td>
                   <td>{res.name}</td>
@@ -100,6 +111,32 @@ const Reservation = () => {
             )}
           </tbody>
         </table>
+        <div className="pagination">
+  <button
+    disabled={currentPage === 1}
+    onClick={() => setCurrentPage((p) => p - 1)}
+  >
+    Prev
+  </button>
+
+  {Array.from({ length: totalPages }, (_, i) => (
+    <button
+      key={i}
+      className={currentPage === i + 1 ? "active" : ""}
+      onClick={() => setCurrentPage(i + 1)}
+    >
+      {i + 1}
+    </button>
+  ))}
+
+  <button
+    disabled={currentPage === totalPages}
+    onClick={() => setCurrentPage((p) => p + 1)}
+  >
+    Next
+  </button>
+</div>
+
       </div>
     </div>
   );

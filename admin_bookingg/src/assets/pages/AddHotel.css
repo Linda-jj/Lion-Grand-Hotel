@@ -8,6 +8,20 @@
   color: black;
   box-shadow: 0 0 5px black;
 }
+.message {
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.message.error {
+  color: #e63946; /* red */
+}
+
+.message.success {
+   color: #e63946;
+   font-size: 20px; /* green */
+}
 
 /* Image upload */
 .upload-container p {

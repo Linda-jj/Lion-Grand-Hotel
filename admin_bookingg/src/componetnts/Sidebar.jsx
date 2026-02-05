@@ -10,7 +10,7 @@ const SideBar = ({ setToken }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h2>Deluxe Hotel</h2>
+        <h2>Lion of Sheba<br/> Grand Hotel</h2>
       </div>
 
       <div className="sidebar-links">

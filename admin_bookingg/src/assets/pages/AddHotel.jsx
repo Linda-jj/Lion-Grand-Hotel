@@ -9,6 +9,7 @@ const AddHotel = ({ token }) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
    const [message, setMessage] = useState("");
+    const [isError, setIsError] = useState(false);
   const roomSubmission = async (e) => {
     e.preventDefault();
     try {
@@ -30,10 +31,10 @@ const AddHotel = ({ token }) => {
         setImage(null);
       } else {
         console.log("error");
-setMessage(" Failed to add room");
+setMessage(" Failed to Add room");
       }
     } catch (error) {
-setMessage(" Failed to add room");
+setMessage(" Failed to Add room");
     }
   };
 
@@ -41,7 +42,11 @@ setMessage(" Failed to add room");
     <div>
       <form onSubmit={roomSubmission} className="add-hotel-form">
        <h2>Add Hotel Room</h2>
-       {message && <p>{message}</p>}
+            {message && (
+          <p className={isError ? "message error" : "message success"}>
+            {message}
+          </p>
+        )}
         <div className="upload-container">
           <p>Upload Image</p>
           <div>
@@ -56,6 +61,7 @@ setMessage(" Failed to add room");
                 id="image"
                 onChange={(e) => setImage(e.target.files[0])}
                 hidden
+                
               />
             </label>
           </div>

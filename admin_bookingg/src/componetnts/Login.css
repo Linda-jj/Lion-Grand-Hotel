@@ -50,7 +50,7 @@
 }
 
 .form-input:focus {
-  border-color: #a21caf; /* fuchsia-900 */
+  border-color: #7e7551; /* fuchsia-900 */
 }
 
 /* Button */
@@ -59,7 +59,7 @@
   padding: 10px 12px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #701a75; /* fuchsia-900 */
+  background-color:#7e7551; /* fuchsia-900 */
   color: white;
   border: none;
   border-radius: 6px;
