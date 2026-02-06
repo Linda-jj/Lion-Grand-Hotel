@@ -31,7 +31,7 @@ const SideBar = ({ setToken }) => {
 
         <button onClick={()=>setToken("")} className="sidebar-logout">
           <p className="sidebar-link-text">Logout</p>
-          <LuLogOut className="sidebar-logout-icon" />
+          <LuLogOut className="sidebar-logout-icon" size={15}/>
         </button>
       </div>
     </div>

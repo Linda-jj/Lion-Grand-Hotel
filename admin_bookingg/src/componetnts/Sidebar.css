@@ -52,36 +52,88 @@
   display: none;
   font-size: 16px;
 }
+.sidebar-logout{
+  padding: 12px;
+  background-color: #7e7551;
+  color: #e5e7eb;
+}
 
 /* show text on medium+ screens (768px+) */
-@media (min-width: 768px) {
+@media (max-width: 639px) {
+  .sidebar {
+    width: 100%;
+    height: 70px;
+    min-height: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: 2px solid #e5e7eb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    z-index: 1000;
+  }
+
+  .sidebar-header {
+    display: none;
+  }
+
+  .sidebar-links {
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 0;
+  }
+
+  .sidebar-link{
+      flex-direction: column;
+    padding: 8px;
+    border-bottom: none;
+  }
+  .sidebar-logout {
+    flex-direction: column;
+    padding: 8px;
+    border-bottom: none;
+  }
+
   .sidebar-link-text {
-    display: block;
+    display: none;
+  }
+
+  .sidebar-link-icon,
+  .sidebar-logout-icon {
+    font-size: 26px;
   }
 }
 
-/* Logout button */
-.sidebar-logout {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 24px;
-  border-bottom: 2px solid #e5e7eb;
-  color: #4b5563;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: left;
-  transition: background-color 0.2s, color 0.2s;
-}
+/* =========================
+   TABLETS (640px – 1023px)
+   ========================= */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .sidebar {
+    width: 80px;
+  }
 
-.sidebar-logout:hover {
-  background-color: #7e7551;
-  color: #ffffff;
-}
+  .sidebar-header h2 {
+    font-size: 18px;
+    text-align: center;
+  }
 
-.sidebar-logout-icon {
-  font-size: 35px;
-  color: #000000;
+  .sidebar-link-text {
+    display: none;
+  }
+
+  .sidebar-link,
+  .sidebar-logout {
+    justify-content: center;
+    padding: 16px 0;
+  }
+
+  .sidebar-link-icon,
+  .sidebar-logout-icon {
+    font-size: 30px;
+  }
 }

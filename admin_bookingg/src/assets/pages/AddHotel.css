@@ -72,3 +72,56 @@
 .add-room-button:hover {
   opacity: 0.9;
 }
+@media (max-width: 639px) {
+  .add-hotel-form {
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+    padding: 12px;
+  }
+
+  .add-hotel-form h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .upload-label img {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .input-container p {
+    font-size: 18px;
+  }
+
+  .input-container input {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .add-room-button {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .add-hotel-form {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .input-container p {
+    font-size: 20px;
+  }
+
+  .upload-label img {
+    width: 160px;
+  }
+}

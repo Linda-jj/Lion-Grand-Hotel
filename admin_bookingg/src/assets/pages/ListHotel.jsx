@@ -81,8 +81,8 @@ const [currentPage, setCurrentPage] = useState(0);
         <ReactPaginate
           pageCount={pageCount}
           onPageChange={(e) => setCurrentPage(e.selected)}
-          previousLabel="← Prev"
-          nextLabel="Next →"
+          previousLabel="<<"
+          nextLabel=">>"
           containerClassName="pagination"
           activeClassName="active"
         />

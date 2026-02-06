@@ -61,6 +61,7 @@ setMessage(" Failed to Add room");
                 id="image"
                 onChange={(e) => setImage(e.target.files[0])}
                 hidden
+                required
                 
               />
             </label>
@@ -74,6 +75,7 @@ setMessage(" Failed to Add room");
             placeholder="Enter room name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
 
@@ -84,6 +86,7 @@ setMessage(" Failed to Add room");
             placeholder="Enter room description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required
           />
         </div>
 
@@ -94,6 +97,7 @@ setMessage(" Failed to Add room");
             placeholder="price"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
+            required
           />
         </div>
 

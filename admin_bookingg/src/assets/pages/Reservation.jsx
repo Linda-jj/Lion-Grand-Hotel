@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import "./Reservation.css";
 import ReactPaginate from "react-paginate";
 
@@ -8,18 +8,18 @@ import { backendUrl } from "../../App";
 
 const Reservation = () => {
   const [reservations, setReservations] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-const itemsPerPage = 4;
-const indexOfLastItem = currentPage * itemsPerPage;
-const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const itemsPerPage = 4;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-const currentReservations = reservations.slice(
-  indexOfFirstItem,
-  indexOfLastItem
-);
+  const currentReservations = reservations.slice(
+    indexOfFirstItem,
+    indexOfLastItem,
+  );
 
-const totalPages = Math.ceil(reservations.length / itemsPerPage);
+  const totalPages = Math.ceil(reservations.length / itemsPerPage);
   // Fetch all reservations once
   useEffect(() => {
     const fetchReservation = async () => {
@@ -38,14 +38,14 @@ const totalPages = Math.ceil(reservations.length / itemsPerPage);
   // Delete reservation function
   const deleteReservation = async (id) => {
     const confirmDelete = window.confirm(
-      "Are you sure you want to cancle this reservation?"
+      "Are you sure you want to cancle this reservation?",
     );
 
     if (!confirmDelete) return;
 
     try {
       const res = await axios.delete(
-        `${backendUrl}/api/reservation/delete/${id}`
+        `${backendUrl}/api/reservation/delete/${id}`,
       );
 
       if (res.data.success) {
@@ -91,14 +91,18 @@ const totalPages = Math.ceil(reservations.length / itemsPerPage);
             ) : (
               currentReservations.map((res) => (
                 <tr key={res._id} className="table-row">
-                  <td>{res.roomName}</td>
-                  <td>{res.name}</td>
-                  <td>{res.email}</td>
-                  <td>{res.phone}</td>
-                  <td>{res.guests}</td>
-                  <td>{new Date(res.checkin).toLocaleDateString()}</td>
-                  <td>{new Date(res.checkout).toLocaleDateString()}</td>
-                  <td>
+                  <td data-label="Room">{res.roomName}</td>
+                  <td data-label="Name">{res.name}</td>
+                  <td data-label="Email">{res.email}</td>
+                  <td data-label="Phone">{res.phone}</td>
+                  <td data-label="Guests">{res.guests}</td>
+                  <td data-label="Check-in">
+                    {new Date(res.checkin).toLocaleDateString()}
+                  </td>
+                  <td data-label="Check-out">
+                    {new Date(res.checkout).toLocaleDateString()}
+                  </td>
+                  <td data-label="Action">
                     <button
                       className="delete-btn"
                       onClick={() => deleteReservation(res._id)}
@@ -112,35 +116,33 @@ const totalPages = Math.ceil(reservations.length / itemsPerPage);
           </tbody>
         </table>
         <div className="pagination">
-  <button
-    disabled={currentPage === 1}
-    onClick={() => setCurrentPage((p) => p - 1)}
-  >
-    Prev
-  </button>
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((p) => p - 1)}
+          >
+            Prev
+          </button>
 
-  {Array.from({ length: totalPages }, (_, i) => (
-    <button
-      key={i}
-      className={currentPage === i + 1 ? "active" : ""}
-      onClick={() => setCurrentPage(i + 1)}
-    >
-      {i + 1}
-    </button>
-  ))}
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i}
+              className={currentPage === i + 1 ? "active" : ""}
+              onClick={() => setCurrentPage(i + 1)}
+            >
+              {i + 1}
+            </button>
+          ))}
 
-  <button
-    disabled={currentPage === totalPages}
-    onClick={() => setCurrentPage((p) => p + 1)}
-  >
-    Next
-  </button>
-</div>
-
+          <button
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((p) => p + 1)}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Reservation;
-
