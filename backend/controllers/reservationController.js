@@ -22,17 +22,17 @@ exports.createReservation = async (req, res) => {
     }
     const checkInDate = new Date(checkin);
 
-const checkOutDate = new Date(checkout);
-    
+    const checkOutDate = new Date(checkout);
+
     if (isNaN(checkInDate) || isNaN(checkOutDate)) {
       return res.status(400).json({
         success: false,
         message: "Invalid dates",
       });
     }
-       const normalizedCheckIn = new Date(checkInDate);
+    const normalizedCheckIn = new Date(checkInDate);
     normalizedCheckIn.setHours(0, 0, 0, 0);
-    
+
     const normalizedCheckOut = new Date(checkOutDate);
     normalizedCheckOut.setHours(0, 0, 0, 0);
 
@@ -42,44 +42,45 @@ const checkOutDate = new Date(checkout);
         message: "Check-out must be after check-in",
       });
     }
-console.log("NEW BOOKING:");
-console.log("checkInDate:", checkInDate.toISOString());
-console.log("checkOutDate:", checkOutDate.toISOString());
-const conflict = await Reservation.findOne({
+    console.log("NEW BOOKING:");
+    console.log("checkInDate:", checkInDate.toISOString());
+    console.log("checkOutDate:", checkOutDate.toISOString());
+    const conflict = await Reservation.findOne({
       roomId,
-    $and: [
-        { 
-          checkin: { 
-            $lt: normalizedCheckOut // Existing checkin is before new checkout
-          } 
+      $and: [
+        {
+          checkin: {
+            $lt: normalizedCheckOut, // Existing checkin is before new checkout
+          },
         },
-        { 
-          checkout: { 
-            $gt: normalizedCheckIn // Existing checkout is after new checkin
-          } 
-        }
-      ]
+        {
+          checkout: {
+            $gt: normalizedCheckIn, // Existing checkout is after new checkin
+          },
+        },
+      ],
     });
 
     if (conflict) {
-      console.log("CONFLICT FOUND:",{
-              existing: {
+      console.log("CONFLICT FOUND:", {
+        existing: {
           checkin: conflict.checkin.toISOString(),
-          checkout: conflict.checkout.toISOString()
+          checkout: conflict.checkout.toISOString(),
         },
         requested: {
           checkin: normalizedCheckIn.toISOString(),
-          checkout: normalizedCheckOut.toISOString()
-        }
+          checkout: normalizedCheckOut.toISOString(),
+        },
       });
       return res.status(409).json({
         success: false,
         // message: "This room is already booked for the selected dates. Please choose different dates or another room.",
-      });}
+      });
+    }
 
     // ---------------- CREATE RESERVATION ----------------
     const reservation = new Reservation({
-    name,
+      name,
       email,
       phone,
       checkin: normalizedCheckIn,

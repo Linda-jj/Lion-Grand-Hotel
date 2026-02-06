@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const reservationSchema = new mongoose.Schema(
   {
     name: { type: String},
-    email: { type: String},
+    email: { type: String },
     phone: { type: String },
     checkin: { type: Date, required: true },
     checkout: { type: Date, required: true },
