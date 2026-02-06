@@ -62,7 +62,7 @@ export default function Contact() {
             <label>Full Name <span>*</span></label>
             <input
             value={fullName}
-            onChange={(e)=>setFullName(e.target.fullName)}
+            onChange={(e)=>setFullName(e.target.value)}
             type="text"
             required
             
@@ -70,14 +70,14 @@ export default function Contact() {
                <label>Email Address<span>*</span></label>
             <input
             value={email}
-            onChange={(e)=>setEmail(e.target.email)}
+            onChange={(e)=>setEmail(e.target.value)}
             type="email"
             required
             />
                   <label>Phone Number<span>*</span></label>
             <input
             value={phone}
-            onChange={(e)=>setPhone(e.target.phone)}
+            onChange={(e)=>setPhone(e.target.value)}
             type="number"
             required
             />
@@ -85,7 +85,7 @@ export default function Contact() {
             <textarea 
             value={text}
             type="text"
-            onChange={(e)=>setText(e.target.text)}
+            onChange={(e)=>setText(e.target.value)}
             required
             />
           <button type="submit">Submit</button>

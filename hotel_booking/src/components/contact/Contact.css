@@ -66,3 +66,56 @@
 .img-txt button:hover{
   background-color:#3F4975 ;
 }
+@media (max-width: 639px) {
+  .contact-continer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-card {
+    width: 90%;
+    height: auto;
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .img-contact {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .img-txt form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .img-contact img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .img-txt button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .contact-continer {
+    gap: 20px;
+  }
+
+  .contact-card {
+    font-size: 18px;
+    height: auto;
+  }
+
+  .img-contact img {
+    width: 320px;
+    height: auto;
+  }
+
+  .img-txt form {
+    width: 420px;
+  }
+}
